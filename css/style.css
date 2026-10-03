@@ -32,6 +32,7 @@
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --header-height: 76px;
+  --promo-h: 36px;
   --container-width: 1180px;
   --radius: 4px;
   --transition: 0.25s ease;
@@ -40,7 +41,7 @@
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + var(--promo-h)); }
 
 body {
   background: var(--bg);
@@ -2218,7 +2219,7 @@ html.is-modal-open { overflow: hidden; }
    ========================================================================== */
 
 /* ---------- Hero message ---------- */
-.hero { min-height: 100vh; min-height: 100svh; padding: calc(var(--header-height) + 24px) 0 70px; }
+.hero { min-height: 100vh; min-height: 100svh; padding: calc(var(--header-height) + var(--promo-h) + 24px) 0 70px; }
 .hero__logo { margin-bottom: 22px; }
 .hero__logo-img { max-width: min(88vw, 560px); }
 
@@ -2522,7 +2523,7 @@ html.is-modal-open { overflow: hidden; }
 
   /* Bigger tap targets */
   .navbar__toggle { width: 44px; height: 44px; padding: 10px 8px; }
-  .navbar.is-open .navbar__links { max-height: calc(100svh - var(--header-height)); overflow-y: auto; }
+  .navbar.is-open .navbar__links { max-height: calc(100svh - var(--header-height) - var(--promo-h)); overflow-y: auto; }
   .navbar.is-open .nav-link { padding: 12px 0; font-size: 1rem; }
   .navbar.is-open .navbar__menu-contact { display: flex; flex-direction: column; gap: 10px; margin-top: 6px; }
   .navbar__menu-contact .btn { width: 100%; }
@@ -2738,7 +2739,7 @@ html.is-modal-open { overflow: hidden; }
 /* ---------- Booking page ---------- */
 .book-page {
   min-height: calc(100vh - var(--header-height));
-  padding: calc(var(--header-height) + 50px) 0 70px;
+  padding: calc(var(--header-height) + var(--promo-h) + 50px) 0 70px;
 }
 
 .book-steps {
@@ -2857,7 +2858,7 @@ html.is-modal-open { overflow: hidden; }
 .book-page__help a { color: var(--ink); font-weight: 700; text-decoration: underline; }
 
 @media (max-width: 760px) {
-  .book-page { padding: calc(var(--header-height) + 30px) 0 50px; }
+  .book-page { padding: calc(var(--header-height) + var(--promo-h) + 30px) 0 50px; }
   .size-choices { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .size-choice {
     display: grid;
@@ -2932,8 +2933,114 @@ html.is-modal-open { overflow: hidden; }
   .cash-king__img { max-width: 220px; margin: 0 auto; }
 }
 
+/* ---------- First-time customer offer ---------- */
+.promo-strip {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  height: var(--promo-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 12px;
+  background: var(--chrome-btn);
+  color: var(--navy);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.promo-strip__tag {
+  background: var(--navy);
+  color: var(--gold-text);
+  font-size: 0.66rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.promo-strip__text strong { font-weight: 800; }
+.promo-strip__cta { font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; text-decoration: underline; text-underline-offset: 3px; }
+
+.navbar { top: var(--promo-h); }
+
+.text-gold { color: var(--gold-text); }
+
+.hero__offer {
+  width: 190px;
+  filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.55));
+  opacity: 0;
+  animation: offerPop 0.7s cubic-bezier(.2, 1.4, .4, 1) forwards 0.9s;
+}
+
+/* Wide screens: sticker sits just right of the logo. Narrower: under the Book Now button. */
+.hero__offer--side {
+  position: absolute;
+  z-index: 2;
+  left: calc(50% + 300px);
+  top: calc(var(--header-height) + var(--promo-h) + 50px);
+}
+
+.hero__offer--inline { display: none; }
+
+@keyframes offerPop {
+  from { opacity: 0; transform: rotate(8deg) scale(0.6); }
+  to { opacity: 1; transform: rotate(8deg) scale(1); }
+}
+
+.offer-card {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  max-width: 640px;
+  margin: 0 auto 30px;
+  padding: 18px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(242, 180, 34, 0.55);
+  background: linear-gradient(135deg, rgba(47, 107, 255, 0.18), var(--card) 60%);
+}
+
+.offer-card__img { width: 100%; transform: rotate(-4deg); filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.5)); }
+
+.offer-card__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin-bottom: 8px;
+  background: var(--chrome-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.offer-card__text p { color: var(--ink-soft); }
+
+@media (max-width: 1199px) {
+  .hero__offer--side { display: none; }
+  .hero__offer--inline { display: block; width: 150px; margin: 22px auto 0; }
+}
+
+@media (max-width: 540px) {
+  :root { --promo-h: 34px; }
+  .promo-strip { font-size: 0.8rem; gap: 8px; }
+  .promo-strip__tag, .promo-strip__cta { display: none; }
+  .hero__offer--inline { width: 130px; }
+  .offer-card { grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding: 16px; }
+  .offer-card__text p { font-size: 0.88rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; }
   .hero__logo, .hero__tagline, .hero__cta, .hero__title, .hero__we-come, .hero__vehicles, .hero__cta-note { opacity: 1; transform: none; }
+  .hero__offer { opacity: 1; }
 }
