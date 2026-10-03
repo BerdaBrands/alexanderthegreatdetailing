@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#0a0f24">
+<title>Book Now | Alexander the Great Detailing</title>
+<meta name="description" content="Book your mobile detail with Alexander the Great Detailing in Cape Coral and Fort Myers. Choose your vehicle size, then pick a time that works for you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-book-page">
+
+<!-- ========== STICKY NAV (minimal, booking page) ========== -->
+<header class="navbar" id="navbar">
+  <div class="navbar__inner">
+    <a href="index.html" class="navbar__logo">
+      <img src="assets/images/logo-small.webp" alt="Alexander the Great Detailing" class="navbar__logo-img">
+    </a>
+    <a href="index.html" class="navbar__back">&larr; Back to Home</a>
+  </div>
+</header>
+
+<!-- ========== BOOKING: STEP 1, VEHICLE SIZE ========== -->
+<section class="contact book-page" id="book">
+  <div class="container">
+    <ol class="book-steps" aria-label="Booking steps">
+      <li class="is-current"><span>1</span> Vehicle</li>
+      <li><span>2</span> Service &amp; Time</li>
+    </ol>
+    <h1 class="section-title">What Do You Drive?</h1>
+    <p class="section-subtitle">Pick your vehicle size, then choose your service and a time that works for you.</p>
+
+    <!-- SQUARE BOOKING: paste each Square Appointments link into the matching href below (replace the "#"). -->
+    <div class="size-choices">
+      <a href="#" class="size-choice" data-size="Sedan / Coupe">
+        <svg class="size-choice__icon" viewBox="0 0 120 56" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M6 42v-6q0-6 7-8l12-3 14-11q4-3 10-3h26q6 0 10 4l9 10 13 2q7 1 7 8v7z"/><path d="M44 25l10-8h20l7 8z"/><circle cx="31" cy="44" r="7" fill="currentColor"/><circle cx="91" cy="44" r="7" fill="currentColor"/></svg>
+        <span class="size-choice__title">Sedan / Coupe</span>
+        <span class="size-choice__examples">Cars, coupes and small vehicles</span>
+        <span class="size-choice__cta">Choose</span>
+      </a>
+
+      <a href="#" class="size-choice" data-size="SUV / Crossover">
+        <svg class="size-choice__icon" viewBox="0 0 120 56" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M6 42V28q0-6 6-7l14-2 10-11q2-3 7-3h46q5 0 7 4l8 13 8 2q6 2 6 8v10z"/><path d="M34 19l8-9h18v9z"/><path d="M66 19v-9h20l5 9z"/><circle cx="31" cy="44" r="8" fill="currentColor"/><circle cx="91" cy="44" r="8" fill="currentColor"/></svg>
+        <span class="size-choice__title">SUV / Crossover</span>
+        <span class="size-choice__examples">Small SUVs: CR-V, RAV4, Rogue, Equinox, Tucson, etc.</span>
+        <span class="size-choice__cta">Choose</span>
+      </a>
+
+      <a href="#" class="size-choice" data-size="Large SUV / Truck / Van">
+        <svg class="size-choice__icon" viewBox="0 0 120 56" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M4 42V26h52V10q0-3 3-3h22q4 0 6 4l8 14 14 2q7 1 7 8v7z"/><path d="M62 24V12h18l6 12z"/><circle cx="28" cy="44" r="8" fill="currentColor"/><circle cx="94" cy="44" r="8" fill="currentColor"/></svg>
+        <span class="size-choice__title">Large SUV / Truck / Van</span>
+        <span class="size-choice__examples">Tahoe, Suburban, Expedition, F-150, Silverado, Ram, Pacifica, Sienna, Odyssey, etc.</span>
+        <span class="size-choice__cta">Choose</span>
+      </a>
+    </div>
+
+    <div class="cash-king">
+      <img src="assets/images/cash-is-king.webp" alt="Cash is King sticker: Alexander wearing a gold crown" class="cash-king__img" loading="lazy">
+      <div class="cash-king__text">
+        <span class="cash-king__tag">Payment</span>
+        <h2 class="cash-king__title">Cash Is King</h2>
+        <p>Cash is preferred for all details. <a href="tel:2395170506">Give us a call</a> for more information.</p>
+      </div>
+    </div>
+
+    <div class="book-page__notes">
+      <p>Third-row vehicles and heavily soiled vehicles may require additional time or an additional charge.</p>
+      <p>Travel fee may apply outside the Cape Coral / Fort Myers area.</p>
+      <p>Prices are based on normal condition. We always confirm any extra charge before doing the work. <a href="index.html#condition">Vehicle condition policy</a></p>
+    </div>
+
+    <p class="book-page__help">Prefer to talk? <a href="tel:2395170506">Call 239-517-0506</a> or <a href="sms:2395170506">text us</a>.</p>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <img src="assets/images/logo-small.webp" alt="Alexander the Great Detailing" class="footer__logo-img" loading="lazy">
+    <p class="footer__tagline">Mobile Car Detailing &bull; Cape Coral 33914 &amp; Fort Myers, FL</p>
+    <p class="footer__phone"><a href="tel:2395170506">Call 239-517-0506</a></p>
+    <p class="footer__copy">&copy; <span id="year"></span> Alexander the Great Detailing. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/book.js"></script>
+</body>
+</html>
