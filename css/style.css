@@ -1642,7 +1642,7 @@ html.is-modal-open { overflow: hidden; }
   .project-card--feature { grid-column: span 2; }
   .project-card--wide { grid-column: span 1; }
   .about__grid { grid-template-columns: 1fr; gap: 36px; }
-  .before-after { grid-template-columns: 1fr; gap: 32px; padding: 28px; }
+  .before-after { grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 28px; }
   .before-after__text { text-align: center; }
   .before-after__text p { margin-left: auto; margin-right: auto; }
 }
@@ -1970,7 +1970,7 @@ html.is-modal-open { overflow: hidden; }
 }
 
 @media (max-width: 900px) {
-  .contact__grid:has(.service-map) { grid-template-columns: 1fr; }
+  .contact__grid:has(.service-map) { grid-template-columns: minmax(0, 1fr); }
   .service-map__frame { min-height: 320px; }
 }
 
@@ -2972,7 +2972,7 @@ html.is-modal-open { overflow: hidden; }
 .text-gold { color: var(--gold-text); }
 
 .hero__offer {
-  width: 190px;
+  width: 140px;
   filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.55));
   opacity: 0;
   animation: offerPop 0.7s cubic-bezier(.2, 1.4, .4, 1) forwards 0.9s;
@@ -2982,8 +2982,8 @@ html.is-modal-open { overflow: hidden; }
 .hero__offer--side {
   position: absolute;
   z-index: 2;
-  left: calc(50% + 300px);
-  top: calc(var(--header-height) + var(--promo-h) + 50px);
+  left: calc(50% + 310px);
+  top: calc(var(--header-height) + var(--promo-h) + 70px);
 }
 
 .hero__offer--inline { display: none; }
@@ -2995,10 +2995,10 @@ html.is-modal-open { overflow: hidden; }
 
 .offer-card {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 24px;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 20px;
   align-items: center;
-  max-width: 640px;
+  max-width: 600px;
   margin: 0 auto 30px;
   padding: 18px 24px;
   border-radius: 16px;
@@ -3011,11 +3011,11 @@ html.is-modal-open { overflow: hidden; }
 .offer-card__title {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   line-height: 1;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   background: var(--chrome-text);
   -webkit-background-clip: text;
   background-clip: text;
@@ -3026,17 +3026,54 @@ html.is-modal-open { overflow: hidden; }
 
 @media (max-width: 1199px) {
   .hero__offer--side { display: none; }
-  .hero__offer--inline { display: block; width: 150px; margin: 22px auto 0; }
+  .hero__offer--inline { display: block; width: 110px; margin: 20px auto 0; }
 }
 
 @media (max-width: 540px) {
   :root { --promo-h: 34px; }
   .promo-strip { font-size: 0.8rem; gap: 8px; }
   .promo-strip__tag, .promo-strip__cta { display: none; }
-  .hero__offer--inline { width: 130px; }
-  .offer-card { grid-template-columns: 110px minmax(0, 1fr); gap: 16px; padding: 16px; }
+  .hero__offer--inline { width: 96px; }
+  .offer-card { grid-template-columns: 76px minmax(0, 1fr); gap: 14px; padding: 14px 16px; }
   .offer-card__text p { font-size: 0.88rem; }
 }
+
+/* ---------- Layout guards: nothing may widen the page on phones ---------- */
+html, body { max-width: 100%; overflow-x: clip; }
+.btn { max-width: 100%; }
+@media (max-width: 760px) {
+  .btn { white-space: normal; text-align: center; }
+  .navbar__cta { white-space: nowrap; }
+}
+
+/* ---------- Tablets: hamburger menu (the full menu needs ~1050px) ---------- */
+@media (max-width: 1080px) {
+  .navbar__links, .navbar__social { display: none; }
+  .navbar__cta { margin-left: auto; }
+  .navbar__toggle { display: flex; width: 44px; height: 44px; padding: 10px 8px; }
+
+  .navbar.is-open .navbar__links {
+    display: flex;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 24px 24px;
+    background: rgba(10, 15, 36, 0.98);
+    border-bottom: 1px solid rgba(242, 180, 34, 0.25);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.55);
+    max-height: calc(100svh - var(--header-height) - var(--promo-h));
+    overflow-y: auto;
+  }
+
+  .navbar.is-open .nav-link { padding: 12px 0; font-size: 1rem; }
+  .navbar.is-open .navbar__menu-contact { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .navbar__menu-contact .btn { width: 100%; }
+}
+
+.contact__location-note a, .contact__location a { overflow-wrap: anywhere; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
