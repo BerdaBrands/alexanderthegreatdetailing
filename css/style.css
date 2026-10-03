@@ -3075,6 +3075,58 @@ html, body { max-width: 100%; overflow-x: clip; }
 
 .contact__location-note a, .contact__location a { overflow-wrap: anywhere; }
 
+/* ---------- Booking page: what happens next ---------- */
+.book-next {
+  max-width: 640px;
+  margin: 34px auto 0;
+  padding: 24px 26px;
+  border-radius: 14px;
+  border: 1px solid var(--line-strong);
+  background: var(--card);
+}
+
+.book-next__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.book-next__steps { counter-reset: step; display: grid; gap: 12px; list-style: none; }
+
+.book-next__steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 42px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.book-next__steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 0.85rem;
+}
+
+.book-next__steps strong { color: var(--ink); }
+
+@media (max-width: 1080px) { .promo-strip__extra { display: none; } }
+@media (max-width: 540px) { .book-next { padding: 20px 18px; } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; }
