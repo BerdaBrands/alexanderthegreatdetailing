@@ -1,0 +1,15 @@
+# Cloudflare Pages headers
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+# Images rarely change: cache for a week
+/assets/*
+  Cache-Control: public, max-age=604800
+
+# CSS/JS change with site edits: short cache so updates show up quickly
+/css/*
+  Cache-Control: public, max-age=3600
+/js/*
+  Cache-Control: public, max-age=3600
