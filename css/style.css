@@ -2159,6 +2159,7 @@ html.is-modal-open { overflow: hidden; }
 }
 
 .pkg-card__group + .pkg-card__list { flex: none; margin-bottom: 12px; }
+.pkg-card__list:has(+ .pkg-card__group) { flex: none; margin-bottom: 10px; }
 
 .pkg-card__bonus {
   margin: 4px 0 20px;
