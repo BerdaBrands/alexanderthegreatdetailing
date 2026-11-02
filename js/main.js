@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealTargets = document.querySelectorAll(
     '.services .section-title, .services .toggle, .price-card, .pkg-card, .why-us__title, .why-us__item, .addons__note, ' +
     '.projects .section-title, .project-card, .before-after, ' +
-    '.about__text, .about__card, .families__text, .family-feature, .size-guide, .condition, .plan__card, ' +
+    '.about__text, .about__card, .families__text, .family-feature, .size-guide, .condition, .plan__card, .svc, ' +
     '.contact .section-title, .contact__quick-actions, .contact__location, .service-map'
   );
 
