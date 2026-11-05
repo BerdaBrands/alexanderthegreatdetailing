@@ -3130,6 +3130,7 @@ html, body { max-width: 100%; overflow-x: clip; }
 
 /* ---------- Gallery: VW SUV ---------- */
 .project-card--vw-suv .project-card__img { object-position: 50% 60%; }
+.project-card--toyota-rav4 .project-card__img { object-position: 50% 28%; }
 
 /* ---------- Monthly plan: 2 washes a month ---------- */
 .plan__card { position: relative; }

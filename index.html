@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261104a">
+<link rel="stylesheet" href="css/style.css?v=20261105b">
 </head>
 <body>
 
@@ -540,11 +540,34 @@
           </ul>
         </div>
       </article>
-      <div class="project-card project-card--placeholder project-card--wide">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Project Coming Soon</strong>
-        <span>New project photos go here</span>
-      </div>
+      <article class="project-card project-card--toyota-rav4 project-card--wide" data-project="toyota-rav4">
+        <button type="button" class="project-card__open" aria-haspopup="dialog" aria-label="Open project: Toyota RAV4">
+          <img class="project-card__img" src="assets/images/projects/toyota-rav4/01.jpg" alt="" loading="lazy">
+          <span class="project-card__overlay">
+            <span class="project-card__kicker">Interior + Exterior</span>
+            <span class="project-card__title">Toyota RAV4</span>
+            <span class="project-card__cta"><span class="project-card__count">7 photos</span><span class="project-card__more">View project</span></span>
+          </span>
+        </button>
+        <div class="project-data" hidden>
+          <p class="project-data__description">A complete interior and exterior detail on a red Toyota RAV4. The paint was hand washed and hand dried to a deep shine, the cargo area was cleaned out, and the dusty cup holders and console were detailed back to like new.</p>
+          <ul class="project-data__services">
+            <li>Hand Wash &amp; Dry</li>
+            <li>Interior Detail</li>
+            <li>Cargo Area</li>
+            <li>Console &amp; Cup Holders</li>
+          </ul>
+          <ul class="project-data__photos">
+            <li><a href="assets/images/projects/toyota-rav4/01.jpg" data-thumb="assets/images/projects/toyota-rav4/01-thumb.jpg">Finished: hand-washed and hand-dried side profile</a></li>
+            <li><a href="assets/images/projects/toyota-rav4/02.jpg" data-thumb="assets/images/projects/toyota-rav4/02-thumb.jpg">Rear view after the exterior wash</a></li>
+            <li><a href="assets/images/projects/toyota-rav4/03.jpg" data-thumb="assets/images/projects/toyota-rav4/03-thumb.jpg">Clean, glossy finish on the tailgate</a></li>
+            <li><a href="assets/images/projects/toyota-rav4/04.jpg" data-thumb="assets/images/projects/toyota-rav4/04-thumb.jpg">Cargo area vacuumed and wiped down</a></li>
+            <li><a href="assets/images/projects/toyota-rav4/05.jpg" data-thumb="assets/images/projects/toyota-rav4/05-thumb.jpg">Checking the door edges and lower trim</a></li>
+            <li><a href="assets/images/projects/toyota-rav4/06.jpg" data-thumb="assets/images/projects/toyota-rav4/06-thumb.jpg">Cup holders before: dust and buildup</a></li>
+            <li><a href="assets/images/projects/toyota-rav4/07.jpg" data-thumb="assets/images/projects/toyota-rav4/07-thumb.jpg">Cup holders after: detailed and clean</a></li>
+          </ul>
+        </div>
+      </article>
       <div class="project-card project-card--placeholder project-card--wide">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
         <strong>Project Coming Soon</strong>
@@ -696,6 +719,6 @@
   <a href="book.html" class="mobile-bar__btn mobile-bar__btn--book">Book Now</a>
 </div>
 
-<script src="js/main.js?v=20261104a"></script>
+<script src="js/main.js?v=20261105b"></script>
 </body>
 </html>
