@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alexanderthegreatdetailing.com/sitemap.xml
